@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    - primary meta tags
+  -->
+    <title>Jeevandaan - Psychiatry</title>
+    <meta name="title" content="Jeevandaan - Psychiatry" />
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="favicon.png" type="image/svg+xml" />
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <!-- 
+    - preload images
+  -->
+    <link rel="preload" as="image" href="./assets/images/hero-banner.png" />
+    <link rel="preload" as="image" href="./assets/images/hero-bg.png" />
+    
+    <style>
+      .department-info {
+        background-color: var(--alice-blue);
+        padding: 40px;
+        border-radius: var(--radius-12);
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      
+      .department-info h2 {
+        margin-bottom: 20px;
+        color: var(--rich-black-fogra-29);
+      }
+      
+      .department-info p {
+        font-size: var(--title-md);
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto 20px;
+      }
+      
+      .department-image {
+        max-width: 100%;
+        border-radius: var(--radius-12);
+        margin: 20px 0;
+      }
+      
+      .doctors-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+      
+      .doctor-card {
+        background-color: var(--white);
+        border-radius: var(--radius-12);
+        overflow: hidden;
+        box-shadow: var(--shadow-1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .doctor-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-2);
+      }
+      
+      .doctor-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+      
+      .doctor-info {
+        padding: 20px;
+      }
+      
+      .doctor-info h3 {
+        margin: 0 0 10px 0;
+        color: var(--rich-black-fogra-29);
+      }
+      
+      .doctor-specialty {
+        color: var(--verdigris);
+        font-weight: var(--fw-700);
+        margin: 0 0 10px 0;
+      }
+      
+      .doctor-description {
+        margin: 15px 0;
+        color: var(--independece);
+      }
+      
+      .btn-appointment {
+        display: inline-block;
+        background-color: var(--verdigris);
+        color: var(--white);
+        padding: 10px 20px;
+        border-radius: var(--radius-6);
+        font-weight: var(--fw-700);
+        transition: background-color 0.3s ease;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+      }
+      
+      .btn-appointment:hover {
+        background-color: var(--midnight-green);
+      }
+    </style>
+  </head>
+
+  <body id="top">
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img
+            src=".\assets\images\logofinal.png"
+            width="200"
+            height="46"
+            alt="Doclab home"
+          />
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <div class="navbar-top">
+            <a href="index.html" class="logo">
+              <img
+                src=".\assets\images\Jeevandaan-high-resolution-logo-white-transparent.png"
+                width="200"
+                height="46"
+                alt="Doclab home"
+              />
+            </a>
+
+            <button
+              class="nav-close-btn"
+              aria-label="clsoe menu"
+              data-nav-toggler
+            >
+              <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </div>
+
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a
+                href="profile.html"
+                class="navbar-link title-md profile-avatar"
+                title="Profile"
+              >
+                <img
+                  src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001884.png"
+                  alt="Profile avatar"
+                  class="avatar-img"
+                />
+              </a>
+            </li>
+
+            <ul class="navbar">
+              <li class="navbar-item">
+                <a
+                  href="#"
+                  class="navbar-link title-md"
+                  onmouseover="showLanguageDropdown()"
+                  onmouseout="hideLanguageDropdown()"
+                  ><i class="fa-solid fa-language"></i> LANGUAGE</a
+                >
+                <div
+                  id="languageDropdown"
+                  class="dropdown-content"
+                  style="display: none"
+                >
+                  <a href="#">Hindi</a>
+ <a href="#">English</a>
+                  <a href="#">Bengali</a>
+                  <a href="#">Telugu</a>
+                  <a href="#">Marathi</a>
+                  <a href="#">Tamil</a>
+                  <a href="#">Urdu</a>
+                  <a href="#">Gujarati</a>
+                  <a href="#">Kannada</a>
+                  <a href="#">Odia</a>
+                  <a href="#">Punjabi</a>
+                  <a href="#">Malayalam</a>
+                  <a href="#">Assamese</a>
+                  <a href="#">Maithili</a>
+                  <a href="#">Sanskrit</a>
+                  <a href="#">Kashmiri</a>
+                </div>
+              </li>
+            </ul>
+
+            <script>
+              // Language dropdown helpers (profile dropdown removed in favour of dedicated profile page)
+              function showLanguageDropdown() {
+                var dropdownContent =
+                  document.getElementById("languageDropdown");
+                if (dropdownContent) dropdownContent.style.display = "block";
+              }
+
+              function hideLanguageDropdown() {
+                var dropdownContent =
+                  document.getElementById("languageDropdown");
+                if (dropdownContent) dropdownContent.style.display = "none";
+              }
+            </script>
+            <li class="navbar-item">
+              <a href="index.html#asdfg" class="navbar-link title-md"
+                ><i class="fa-solid fa-house-medical"></i> SERVICES</a
+              >
+            </li>
+
+            <li class="navbar-item">
+              <button
+                onclick="openModal()"
+                href="#"
+                class="navbar-link title-md"
+              >
+                <i class="fa-solid fa-truck-medical"></i> EMERGENCY
+              </button>
+
+              <!-- The modal -->
+              <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close" onclick="closeModal()">&times;</span>
+                  <h2>Emergency Alert</h2>
+                  <p>Do you want to call an ambulance?</p>
+                  <div class="button-container">
+                    <button class="highlight" onclick="callAmbulance()">
+                      Yes
+                    </button>
+                    <button onclick="closeModal()">No</button>
+                  </div>
+                </div>
+              </div>
+
+              <script>
+                // Function to open the modal
+                function openModal() {
+                  window.scroll(0, 0);
+                  var modal = document.getElementById("myModal");
+                  modal.style.display = "block";
+                  // Highlight the Yes button by default
+                  var yesButton = modal.querySelector(".highlight");
+                  yesButton.focus();
+                }
+
+                // Function to close the modal
+                function closeModal() {
+                  var modal = document.getElementById("myModal");
+                  modal.style.display = "none";
+                }
+
+                // Function to call ambulance (triggered when Yes button is clicked)
+                function callAmbulance() {
+                  alert("Calling ambulance");
+                  closeModal();
+                }
+
+                // Close the modal when clicking outside of it
+                window.onclick = function (event) {
+                  var modal = document.getElementById("myModal");
+                  if (event.target == modal) {
+                    closeModal();
+                  }
+                };
+              </script>
+            </li>
+
+            <li class="navbar-item">
+              <a href="index.html#bob" class="navbar-link title-md"
+                ><i class="fa-solid fa-phone"></i> CONTACT US</a
+              >
+            </li>
+          </ul>
+
+          <ul class="social-list">
+            <li>
+              <a href="twitter.com" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="facebook.com" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="pinterest.com" class="social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.instagram.com/" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="youtube.com" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline"></ion-icon>
+        </button>
+
+        <div class="overlay" data-nav-toggler data-overlay></div>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <!-- 
+        - #HERO
+      -->
+
+        <section
+          class="section hero"
+          style="background-image: url('./assets/images/hero-bg.png')"
+          aria-label="home"
+        >
+          <div class="container">
+            <div class="hero-content">
+              <p class="hero-subtitle has-before" data-reveal="left">
+                Psychiatry Department
+              </p>
+
+              <h1 class="headline-lg hero-title" data-reveal="left">
+                PSYCHIATRY <br />
+                SPECIALISTS
+              </h1>
+            </div>
+          </div>
+        </section>
+
+        <!-- 
+        - #DEPARTMENT INFO
+      -->
+
+        <section class="section">
+          <div class="container">
+            <div class="department-info">
+              <h2>About Our Psychiatry Department</h2>
+              <p>
+                Our Psychiatry Department provides comprehensive mental health services to diagnose, treat, and support individuals with various mental health conditions. Our team of experienced psychiatrists and mental health professionals are dedicated to providing compassionate care in a safe and supportive environment.
+              </p>
+              <p>
+                We offer a range of services including diagnostic evaluations, medication management, psychotherapy, and crisis intervention. Our approach is holistic, focusing on both the biological and psychosocial aspects of mental health to ensure the best possible outcomes for our patients.
+              </p>
+              <img src="./assets/images/doctorr.png" alt="Psychiatry Department" class="department-image" />
+            </div>
+
+            <h2 class="headline-md text-center">Our Psychiatrists</h2>
+            
+            <div class="doctors-grid">
+              <!-- Doctor 1 -->
+              <div class="doctor-card">
+                <img src="./assets/images/doctorr.png" alt="Dr. Sarah Johnson" class="doctor-image" />
+                <div class="doctor-info">
+                  <h3>Dr. Sarah Johnson</h3>
+                  <div class="doctor-specialty">Chief Psychiatrist</div>
+                  <p class="doctor-description">
+                    Dr. Johnson has over 15 years of experience in treating mood disorders, anxiety disorders, and psychotic disorders. She specializes in cognitive behavioral therapy and psychopharmacology.
+                  </p>
+                  <button class="btn-appointment">Book Appointment</button>
+                </div>
+              </div>
+              
+              <!-- Doctor 2 -->
+              <div class="doctor-card">
+                <img src="./assets/images/doctorr.png" alt="Dr. Michael Chen" class="doctor-image" />
+                <div class="doctor-info">
+                  <h3>Dr. Michael Chen</h3>
+                  <div class="doctor-specialty">Child & Adolescent Psychiatrist</div>
+                  <p class="doctor-description">
+                    Dr. Chen specializes in treating mental health conditions in children and adolescents. He has expertise in developmental disorders, ADHD, and family therapy approaches.
+                  </p>
+                  <button class="btn-appointment">Book Appointment</button>
+                </div>
+              </div>
+              
+              <!-- Doctor 3 -->
+              <div class="doctor-card">
+                <img src="./assets/images/doctorr.png" alt="Dr. Priya Sharma" class="doctor-image" />
+                <div class="doctor-info">
+                  <h3>Dr. Priya Sharma</h3>
+                  <div class="doctor-specialty">Geriatric Psychiatrist</div>
+                  <p class="doctor-description">
+                    Dr. Sharma focuses on mental health issues in older adults, including dementia, depression, and anxiety. She has extensive experience in treating age-related psychiatric conditions.
+                  </p>
+                  <button class="btn-appointment">Book Appointment</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <!-- 
+    - #FOOTER
+  -->
+
+    <footer
+      class="footer"
+      style="background-image: url('./assets/images/footer-bg.png')"
+    >
+      <div class="container">
+        <div class="section footer-top">
+          <div class="footer-brand" data-reveal="bottom">
+            <a href="index.html" class="logo">
+              <img
+                src="assets/images/logofinal.png"
+                width="0200"
+                height="46"
+                loading="lazy"
+                alt="Doclab home"
+              />
+            </a>
+
+            <ul class="contact-list has-after">
+              <li class="contact-item">
+                <div class="item-icon">
+                  <ion-icon name="mail-open-outline"></ion-icon>
+                </div>
+
+                <div>
+                  <p>
+                    Main Email :
+                    <a href="mailto:jeevandaan@gmail.com" class="contact-link"
+                      >jeevandaan@&shy;gmail.com</a
+                    >
+                  </p>
+
+                  <p>
+                    Inquiries :
+                    <a href="jeevandaanqueries@gmail.com" class="contact-link"
+                      >jeevandaanqueries@gmail.com</a
+                    >
+                  </p>
+                </div>
+              </li>
+
+              <li class="contact-item">
+                <div class="item-icon">
+                  <ion-icon name="call-outline"></ion-icon>
+                </div>
+
+                <div>
+                  <p>
+                    Office Telephone :
+                    <a href="tel:7509043085" class="contact-link">7509043085</a>
+                  </p>
+
+                  <p>
+                    Mobile :
+                    <a href="tel:9471784500" class="contact-link">9471784500</a>
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-list" data-reveal="bottom">
+            <p class="headline-sm footer-list-title">About Us</p>
+
+            <p class="text">DEVELOPED BY Ctrl Z</p>
+
+            <address class="address">
+              <ion-icon name="map-outline"></ion-icon>
+
+              <span class="text">
+                NIT JSR <br />
+                Jamshedpur,832108
+              </span>
+            </address>
+          </div>
+
+          <ul class="footer-list" data-reveal="bottom">
+            <li>
+              <p class="headline-sm footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="index.html#asdf" class="text footer-link">Conditions</a>
+            </li>
+
+            <li>
+              <a href="medicine.html" class="text footer-link">Medicine List</a>
+            </li>
+
+            <li>
+              <a href="#" class="text footer-link">How It Works</a>
+            </li>
+
+            <li>
+              <a href="index.html#doctors-list" class="text footer-link">Doctor List</a>
+            </li>
+
+            <li>
+              <a href="#" class="text footer-link">Health Centres</a>
+            </li>
+
+            <li>
+              <a href="index.html#bob" class="text footer-link">Contact Us</a>
+            </li>
+          </ul>
+
+          <ul class="footer-list" data-reveal="bottom">
+            <li>
+              <p class="headline-sm footer-list-title">Useful Links</p>
+            </li>
+
+            <li>
+              <a href="#" class="text footer-link">Conditions</a>
+            </li>
+
+            <li>
+              <a href="#" class="text footer-link">Terms of Use</a>
+            </li>
+
+            <li>
+              <a href="#" class="text footer-link">Our Services</a>
+            </li>
+
+            <li>
+              <a href="#" class="text footer-link">Join as a Doctor</a>
+            </li>
+
+            <li>
+              <a href="#" class="text footer-link">Kiosks List</a>
+            </li>
+
+            <li>
+              <a href="#" class="text footer-link">Troubleshooting</a>
+            </li>
+          </ul>
+
+          <div class="footer-list" data-reveal="bottom">
+            <p class="headline-sm footer-list-title">FEEDBACK</p>
+
+            <form action="" class="footer-form">
+              <input name="email" placeholder="" class="input-field title-lg" />
+
+              <button type="submit" class="btn has-before title-md">
+                SUBMIT
+              </button>
+            </form>
+
+            <p class="text">
+              The feedback will be considered and acted upon by the admin team.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="text copyright">
+            &copy; JEEVANDAAN 2024 | All Rights Reserved by Ctrl Z
+          </p>
+
+          <ul class="social-list">
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-google"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a
+      href="#top"
+      class="back-top-btn"
+      aria-label="back to top"
+      data-back-top-btn
+    >
+      <ion-icon name="chevron-up"></ion-icon>
+    </a>
+
+    <script src="./assets/js/script.js"></script>
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="./assets/js/script.js"></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
