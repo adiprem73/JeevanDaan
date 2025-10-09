@@ -427,6 +427,10 @@ body.nav-active {
 .navbar-list {
   margin-block-end: 30px;
   border-block-end: 1px solid var(--white_a10);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar-item {
