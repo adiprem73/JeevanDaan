@@ -1393,7 +1393,7 @@ body.nav-active {
   width: 110px;
   height: 110px;
   object-fit: cover;
-  margin: 15px 0;
+  margin: 1px 60px;
   border-radius: 12px;
 }
 
