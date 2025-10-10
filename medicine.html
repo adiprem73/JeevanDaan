@@ -5,431 +5,137 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeevandaan - Medicine Info Finder</title>
 
-    <!-- 
-    - primary meta tags
-  -->
-    <title>Jeevandaan</title>
-    <meta name="title" content="Jeevandaan">
-    <!--meta name="description" content="This is a madical html template made by codewithsadee
-
-
-    - favicon
-  -->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
-    <!-- 
-    - google font link
-  -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rubik:wght@400;500;700&display=swap"
         rel="stylesheet">
 
-    <!-- 
-    - custom css link
-  -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- 
-    - preload images
-  -->
-    <link rel="preload" as="image" href="./assets/images/hero-banner.png">
-    <link rel="preload" as="image" href="./assets/images/hero-bg.png">
-    <style>
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            /* Background color */
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .modal {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            /* Position the modal */
-            z-index: 1;
-            /* Make sure it appears above everything else */
-            left: 0;
-            top: 0;
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            overflow: auto;
-            /* Enable scrolling if needed */
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Black background with opacity */
-        }
-
-        /* Modal content */
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            /* Center the modal vertically and horizontally */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            /* 80% of the container width */
-        }
-
-        /* Close button */
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        /* Yes and No buttons */
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .button-container button {
-            padding: 10px 20px;
-            margin: 0 10px;
-            cursor: pointer;
-        }
-
-        .button-container button.highlight {
-            background-color: #4CAF50;
-            /* Green */
-            color: white;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            /* Center the modal vertically and horizontally */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 60%;
-            /* Set width */
-            max-width: 400px;
-            /* Maximum width */
-            border-radius: 10px;
-            /* Rounded corners */
-            text-align: center;
-            /* Center align text */
-        }
-
-        /* Yes and No buttons */
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .button-container button {
-            padding: 10px 20px;
-            margin: 0 10px;
-            cursor: pointer;
-            border: none;
-            background-color: #4CAF50;
-            /* Green */
-            color: white;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .button-container button:focus {
-            outline: none;
-            /* Remove focus outline */
-        }
-
-        .button-container button:hover {
-            background-color: #45a049;
-            /* Darker green on hover */
-        }
-
-        .button-container button.highlight {
-            background-color: #45a049;
-            /* Darker green */
-        }
-
-        .button-container {
-            display: flex;
-            /* Use flexbox for horizontal layout */
-            justify-content: center;
-            /* Center the buttons horizontally */
-            margin-top: 20px;
-        }
-
-        .button-container button {
-            padding: 10px 20px;
-            margin: 0 10px;
-            cursor: pointer;
-            border: none;
-            background-color: #4CAF50;
-            /* Green */
-            color: white;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .button-container button:focus {
-            outline: none;
-            /* Remove focus outline */
-        }
-
-        .button-container button:hover {
-            background-color: #00adb3;
-            /* Darker green on hover */
-        }
-
-        .button-container button.highlight {
-            background-color: #00adb3;
-            /* Darker green */
-        }
-
-        .navbar-link:hover {
-            background-color: #00adb3;
-            color: black;
-        }
-
-        /* Dropdown container */
-        .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-
-        /* Dropdown content (hidden by default) */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        /* Style for dropdown links */
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-
-        /* Change color of dropdown links on hover */
-        .dropdown-content a:hover {
-            background-color: #00adb3;
-        }
-
-        /* Show the dropdown content when hover */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-    </style>
-    <link rel="stylesheet" href="./medicine/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body id="top">
 
-    <!-- 
-    - #PRELOADER
-  -->
-
-    <div class="preloader" data-preloader>
-        <div class="circle"></div>
-    </div>
-
-
-    <script>
-        // Scroll to the top of the page on page load
-        window.onbeforeunload = function () {
-            window.scroll(0, 0);
-        };
-        window.onload = function () {
-            window.scroll(0, 0);
-        };
-    </script>
-
-
-    <!-- 
-    - #HEADER
-  -->
-
-    <header style="background-color: var(--rich-black-fogra-29);" class="header" data-header>
+    <!-- HEADER -->
+    <header class="header">
         <div class="container">
-
             <a href="index.html" class="logo">
-                <img src=".\assets\images\logofinal.png" width="200" height="46" alt="Doclab home">
+                <img src="./assets/images/logofinal.png" width="200" height="46" alt="Jeevandaan">
             </a>
 
-            <nav class="navbar" data-navbar>
-
-                <div class="navbar-top">
-
-                    <a href="index.html" class="logo">
-                        <img src=".\assets\images\medisahayak-high-resolution-logo-white-transparent.png" width="200"
-                            height="46" alt="Doclab home">
-                    </a>
-
-                    <button class="nav-close-btn" aria-label="clsoe menu" data-nav-toggler>
-                        <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-                    </button>
-
-                </div>
-
-
+            <nav class="navbar">
                 <ul class="navbar-list">
-
                     <li class="navbar-item">
-                        <a href="../profile.html" class="navbar-link title-md profile-avatar" title="Profile">
-                             <img src="./assets/images/doctorr.png" alt="Profile avatar" class="avatar-img">
+                        <a href="../profile.html" class="navbar-link profile-avatar" title="Profile">
+                            <img src="./assets/images/doctorr.png" alt="Profile avatar" class="avatar-img">
                         </a>
                     </li>
-
-                    <ul class="navbar">
-
-                        <li class="navbar-item">
-                            <a href="#" class="navbar-link title-md" onmouseover="showLanguageDropdown()"
-                                onmouseout="hideLanguageDropdown()"><i class="fa-solid fa-language"></i> LANGUAGE</a>
-                            <div id="languageDropdown" class="dropdown-content" style="display: none;">
-                                <a href="#">Hindi</a>
-                                <a href="#">English</a>
-                                <a href="#">Bengali</a>
-                                <a href="#">Telugu</a>
-                                <a href="#">Marathi</a>
-                                <a href="#">Tamil</a>
-                                <a href="#">Urdu</a>
-                                <a href="#">Gujarati</a>
-                                <a href="#">Kannada</a>
-                                <a href="#">Odia</a>
-                                <a href="#">Punjabi</a>
-                                <a href="#">Malayalam</a>
-                                <a href="#">Assamese</a>
-                                <a href="#">Maithili</a>
-                                <a href="#">Sanskrit</a>
-                                <a href="#">Kashmiri</a>
-
-                            </div>
-                        </li>
-                    </ul>
-
-                    <script>
-                        // Language dropdown helpers (profile dropdown removed; avatar navigates to profile.html)
-                        function showLanguageDropdown() {
-                            var dropdownContent = document.getElementById('languageDropdown');
-                            if (dropdownContent) dropdownContent.style.display = "block";
-                        }
-
-                        function hideLanguageDropdown() {
-                            var dropdownContent = document.getElementById('languageDropdown');
-                            if (dropdownContent) dropdownContent.style.display = "none";
-                        }
-                    </script>
-                   
-                    <li class="navbar-item">
-
-                        <button href="#" class="navbar-link title-md"><i class="fa-solid fa-truck-medical"></i> EMERGENCY</button>
-
-                        
-
+                    <li class="navbar-item dropdown">
+                        <a href="#" class="navbar-link"><i class="fa-solid fa-language"></i> LANGUAGE</a>
+                        <div class="dropdown-content">
+                            <a href="#">Hindi</a>
+                            <a href="#">English</a>
+                            <a href="#">Bengali</a>
+                            <a href="#">Telugu</a>
+                            <a href="#">Marathi</a>
+                            <a href="#">Tamil</a>
+                            <a href="#">Urdu</a>
+                            <a href="#">Gujarati</a>
+                            <a href="#">Kannada</a>
+                            <a href="#">Odia</a>
+                            <a href="#">Punjabi</a>
+                            <a href="#">Malayalam</a>
+                            <a href="#">Assamese</a>
+                            <a href="#">Maithili</a>
+                            <a href="#">Sanskrit</a>
+                            <a href="#">Kashmiri</a>
+                        </div>
                     </li>
-
                     <li class="navbar-item">
-                        <a href="#bob" class="navbar-link title-md"><i class="fa-solid fa-phone"></i> CONTACT US</a>
+                        <button class="navbar-link"><i class="fa-solid fa-truck-medical"></i> EMERGENCY</button>
                     </li>
-
+                    <li class="navbar-item">
+                        <a href="#contact" class="navbar-link"><i class="fa-solid fa-phone"></i> CONTACT US</a>
+                    </li>
                 </ul>
             </nav>
-            <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-                <ion-icon name="menu-outline"></ion-icon>
-            </button>
-            <div class="overlay" data-nav-toggler data-overlay></div>
         </div>
     </header>
 
-
-    <main style="width: 100%;">
-
-        <!-- <div class="medcontainer">
-            <h1>Medicine Info Finder</h1>
-            <input type="text" id="medicineName" placeholder="Enter keyword (name or composition)" />
-            <button class="med-search" id="searchBtn">Search</button>
-            <div id="result" class="tiles-container"></div>
-        </div>
-
-        
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <div id="modalDetails"></div>
-            </div>
-        </div> -->
-
-        <div class="medcontainer">
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- Medicine Search Section -->
+        <section class="medcontainer">
             <div class="med">
-                <h1>Medicine Info Finder<i class="fa-solid fa-pills"></i> </h1>
-                <input type="text" id="medicineName" placeholder="Please enter name of medicine" />
+                <h1>Medicine Info Finder <i class="fa-solid fa-pills"></i></h1>
+                <input type="text" id="medicineName" placeholder="Enter medicine name or composition" />
                 <button class="med-search" id="searchBtn">Search <i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
-            <!-- Suggested search tags -->
+
+            <!-- Suggested Search Chips -->
             <div id="suggestedSearches" class="suggested-chips">
-                <!-- Chips will be populated dynamically -->
+                <span class="chip">Paracetamol</span>
+                <span class="chip">Ibuprofen</span>
+                <span class="chip">Amoxicillin</span>
+                <span class="chip">Vitamin C</span>
             </div>
-        
+
+            <!-- Search Results -->
             <div id="result" class="tiles-container"></div>
-        </div>
-        
+        </section>
+
+        <!-- Modal for Medicine Details -->
         <div id="modal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <div id="modalDetails"></div>
             </div>
         </div>
-        <section class="Medicine-types">
-            <div class="Medical-container">
-                <div class="Pain-relief">
-                    <h1> Pain relief</h1>
-                    <img src="./assets/images/Painkiller.jpg"width="200"height="46"alt="Pain relief image" >
+
+        <!-- Medicine Categories -->
+        <section class="medicine-types">
+            <div class="medical-container">
+                <div class="category">
+                    <h1>Pain Relief</h1>
+                    <img src="./assets/images/Painkiller.jpg" alt="Pain relief">
                     <div class="arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
                 </div>
-                <div class="Antibiotics">
+                <div class="category">
                     <h1>Antibiotics</h1>
-                    <img src="./assets/images/Antibiotics.jpg"width="200" height="46" alt="Antibiotics image">
+                    <img src="./assets/images/Antibiotics.jpg" alt="Antibiotics">
                     <div class="arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
                 </div>
-                <div class="Vitamins-Supplements">
-                    <h1>Vitamins &amp; Supplements</h1>
-                    <img src="./assets/images/close-vitamins-supplements-on-white Better.jpg"width="200" height="46"alt="Vitamins-Supplements">
-                     <div class="arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="category">
+                    <h1>Vitamins & Supplements</h1>
+                    <img src="./assets/images/close-vitamins-supplements-on-white Better.jpg"
+                        alt="Vitamins & Supplements">
+                    <div class="arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
                 </div>
-                <div class="Allergy-Care">
-                    <h1>Allergy-Care</h1>
-                    <img src="./assets/images/Allergy.jpg"width="200" height="46"alt="Allergy-Care">
-                 <div class="arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="category">
+                    <h1>Allergy Care</h1>
+                    <img src="./assets/images/Allergy.jpg" alt="Allergy Care">
+                    <div class="arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </div>
         </section>
     </main>
 
-
-    <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
-        <ion-icon name="chevron-up"></ion-icon>
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-top-btn" aria-label="back to top">
+        <i class="fa-solid fa-chevron-up"></i>
     </a>
 
-    <script src="./assets/js/script.js"></script>
-
-    <script src="/medicine/mediscript.js"></script>
-
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
