@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeevandaan - Pulmonology Teleconsult</title>
+
+    <link rel="shortcut icon" href="favicon.png" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./assets/css/teleconsult.css" />
+  </head>
+
+  <body id="top">
+    <header class="header" data-header>
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logofinal.png" width="200" height="46" alt="Jeevandaan" />
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <div class="navbar-top">
+            <a href="index.html" class="logo">
+              <img
+                src="./assets/images/Jeevandaan-high-resolution-logo-white-transparent.png"
+                width="200"
+                height="46"
+                alt="Jeevandaan"
+              />
+            </a>
+            <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+              <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </div>
+
+          <ul class="navbar-list">
+            <li class="navbar-item"><a href="pulmonogy.html" class="navbar-link title-md">Pulmonology</a></li>
+            <li class="navbar-item"><a href="index.html" class="navbar-link title-md">Home</a></li>
+            <li class="navbar-item"><a href="medicine.html" class="navbar-link title-md">Medicine List</a></li>
+          </ul>
+        </nav>
+
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline"></ion-icon>
+        </button>
+        <div class="overlay" data-nav-toggler data-overlay></div>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <section class="section hero" style="background-image: url('./assets/images/hero-bg.png')" aria-label="pulmonology">
+          <div class="container">
+            <div class="hero-content">
+              <p class="hero-subtitle has-before">Pulmonology — Teleconsult</p>
+              <h1 class="headline-lg hero-title">Request a Teleconsult with a Pulmonologist</h1>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="teleconsult-section">
+              <div class="teleconsult-main">
+                <h2>Book a Teleconsultation</h2>
+                <p>Fill the details below — a pulmonologist will contact you on the chosen date/time. This demo stores requests locally in your browser.</p>
+
+                <form id="teleconsultForm" class="teleconsult-form" onsubmit="return false;">
+                  <label class="full visually-hidden">Full name
+                    <input id="name" type="text" placeholder="Full name" required />
+                  </label>
+
+                  <label>
+                    <span class="visually-hidden">Phone number</span>
+                    <input id="phone" type="tel" placeholder="Phone number" required />
+                  </label>
+
+                  <label>
+                    <span class="visually-hidden">Email</span>
+                    <input id="email" type="text" placeholder="Email (optional)" />
+                  </label>
+
+                  <label>
+                    <span class="visually-hidden">Preferred date</span>
+                    <input id="date" type="date" required />
+                  </label>
+
+                  <label>
+                    <span class="visually-hidden">Preferred time</span>
+                    <input id="time" type="time" required />
+                  </label>
+
+                  <label class="full visually-hidden">
+                    Symptoms
+                    <textarea id="symptoms" rows="4" placeholder="Brief symptoms / reason for consult" class="full"></textarea>
+                  </label>
+
+                  <div class="full" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                    <button id="requestBtn" class="btn-appointment" type="button">Request Teleconsult</button>
+                    <button id="viewRequestsBtn" class="btn" type="button">View My Requests</button>
+                  </div>
+                </form>
+
+                <div id="confirmation" class="status-box" style="display:none"></div>
+
+                <div class="status-box" id="liveStatus">
+                  <strong>Live Queue Status</strong>
+                  <p id="queueInfo">No active teleconsult requests yet.</p>
+                  <small>This is a simulated live indicator for demo purposes.</small>
+                </div>
+              </div>
+
+              <aside class="teleconsult-aside">
+                <div class="card">
+                  <h4>Why choose teleconsult?</h4>
+                  <p>Quick access to specialists from your home. Secure, convenient and ideal for follow-ups.</p>
+                  <div style="margin:12px 0;">
+                    <span class="chip">Fast</span>
+                    <span class="chip">Secure</span>
+                    <span class="chip">Affordable</span>
+                  </div>
+
+                  <h4 style="margin-top:16px;">Available Pulmonologists</h4>
+                  <ul style="padding-left:18px;margin-top:8px;color:var(--independece);">
+                    <li>Dr. Aarti Sharma — 12 yrs experience</li>
+                    <li>Dr. Rahul Mehta — Sleep & Pulmonary</li>
+                    <li>Dr. S. K. Verma — Critical care specialist</li>
+                  </ul>
+
+                  <h4 style="margin-top:16px;">Need help?</h4>
+                  <p style="margin:6px 0;color:var(--independece);">Call: <a href="tel:+911234567890">+91 12345 67890</a></p>
+                  <p style="margin:0;color:var(--independece);">Email: <a href="mailto:help@jeevandaan.example">help@jeevandaan.example</a></p>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
+      <div class="container">
+        <div class="footer-bottom">
+          <p class="text copyright">&copy; JEEVANDAAN 2024 | All Rights Reserved by Ctrl Z</p>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+      <ion-icon name="chevron-up"></ion-icon>
+    </a>
+
+    <script src="./assets/js/script.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+      // Teleconsult client-side logic: validate, save to localStorage, update live queue, and show modal list
+      (function () {
+        const btn = document.getElementById('requestBtn');
+        const conf = document.getElementById('confirmation');
+        const queueInfo = document.getElementById('queueInfo');
+        const viewBtn = document.getElementById('viewRequestsBtn');
+
+        // modal elements
+        const requestsModalId = 'requestsModal';
+
+        function loadBookings() {
+          try {
+            return JSON.parse(localStorage.getItem('teleconsult_bookings') || '[]');
+          } catch (e) {
+            console.error('loadBookings error', e);
+            return [];
+          }
+        }
+
+        function saveBooking(b) {
+          const arr = loadBookings();
+          arr.push(b);
+          localStorage.setItem('teleconsult_bookings', JSON.stringify(arr));
+        }
+
+        function clearBookings() {
+          localStorage.removeItem('teleconsult_bookings');
+        }
+
+        function updateLiveStatus() {
+          const arr = loadBookings();
+          if (!arr.length) {
+            queueInfo.textContent = 'No active teleconsult requests yet.';
+          } else {
+            const next = arr.length;
+            queueInfo.textContent = `${next} request(s) in the queue. Most recent: ${new Date(arr[arr.length-1].created).toLocaleString()}`;
+          }
+        }
+
+        function openRequestsModal() {
+          let modal = document.getElementById(requestsModalId);
+          if (!modal) {
+            // create modal lazily
+            modal = document.createElement('div');
+            modal.id = requestsModalId;
+            modal.className = 'modal';
+            modal.innerHTML = `
+              <div class="modal-content">
+                <span class="close" id="closeRequests">&times;</span>
+                <h3>Your teleconsult requests</h3>
+                <div id="requestsList"></div>
+                <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end;">
+                  <button id="clearRequests" class="btn">Clear all</button>
+                </div>
+              </div>`;
+            document.body.appendChild(modal);
+
+            document.getElementById('closeRequests').addEventListener('click', function () {
+              modal.style.display = 'none';
+            });
+
+            document.getElementById('clearRequests').addEventListener('click', function () {
+              if (confirm('Clear all saved teleconsult requests?')) {
+                clearBookings();
+                renderRequests();
+                updateLiveStatus();
+              }
+            });
+          }
+
+          renderRequests();
+          modal.style.display = 'flex';
+        }
+
+        function renderRequests() {
+          const listEl = document.getElementById('requestsList');
+          if (!listEl) return;
+          const arr = loadBookings();
+          if (!arr.length) {
+            listEl.innerHTML = '<p>No saved requests.</p>';
+            return;
+          }
+
+          const html = arr
+            .slice()
+            .reverse()
+            .map((r) => {
+              return `
+                <div style="border:1px solid rgba(0,0,0,0.06);padding:10px;margin-bottom:8px;border-radius:8px;background:#fff;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+                    <div>
+                      <strong>${escapeHtml(r.name || '—')}</strong>
+                      <div style="color:var(--independece);font-size:1.3rem">${r.date} ${r.time}</div>
+                    </div>
+                    <div style="text-align:right;color:var(--independece);font-size:1.2rem">${new Date(r.created).toLocaleString()}</div>
+                  </div>
+                  <div style="margin-top:8px;color:var(--independece);">${escapeHtml(r.symptoms || '')}</div>
+                  <div style="margin-top:8px;font-family:monospace;background:rgba(0,0,0,0.04);display:inline-block;padding:4px 6px;border-radius:6px">${r.id}</div>
+                </div>`;
+            })
+            .join('');
+
+          listEl.innerHTML = html;
+        }
+
+        // small escape helper
+        function escapeHtml(str) {
+          return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+        }
+
+        btn.addEventListener('click', function () {
+          const name = document.getElementById('name').value.trim();
+          const phone = document.getElementById('phone').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const date = document.getElementById('date').value;
+          const time = document.getElementById('time').value;
+          const symptoms = document.getElementById('symptoms').value.trim();
+
+          if (!name || !phone || !date || !time) {
+            conf.style.display = 'block';
+            conf.innerHTML = '<strong style="color:#c0392b">Please fill required fields (name, phone, date, time).</strong>';
+            return;
+          }
+
+          const booking = {
+            id: 'TC-' + Date.now(),
+            name,
+            phone,
+            email,
+            date,
+            time,
+            symptoms,
+            created: Date.now()
+          };
+
+          saveBooking(booking);
+
+          conf.style.display = 'block';
+          conf.innerHTML = `<strong>Confirmed.</strong> Your teleconsult request id <code>${booking.id}</code> is saved. A pulmonologist will contact you near <em>${date} ${time}</em>.`;
+
+          // clear some fields for convenience
+          document.getElementById('phone').value = '';
+          document.getElementById('email').value = '';
+          document.getElementById('symptoms').value = '';
+
+          updateLiveStatus();
+        });
+
+        // open modal
+        if (viewBtn) {
+          viewBtn.addEventListener('click', function () {
+            openRequestsModal();
+          });
+        }
+
+        // close modal when clicking outside content
+        document.addEventListener('click', function (e) {
+          const modal = document.getElementById(requestsModalId);
+          if (!modal) return;
+          if (e.target === modal) modal.style.display = 'none';
+        });
+
+        // show saved bookings count on load
+        updateLiveStatus();
+      })();
+    </script>
+  </body>
+</html>

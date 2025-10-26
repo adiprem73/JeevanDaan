@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JeevanDaan - Vaccine Scheduler</title>
+
+    <link rel="shortcut icon" href="favicon.png" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./assets/css/vaccine-scheduler.css" />
+  </head>
+
+  <body id="top">
+    <header class="header" data-header>
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logofinal.png" width="200" height="46" alt="Jeevandaan" />
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <div class="navbar-top">
+            <a href="index.html" class="logo">
+              <img
+                src="./assets/images/Jeevandaan-high-resolution-logo-white-transparent.png"
+                width="200"
+                height="46"
+                alt="Jeevandaan"
+              />
+            </a>
+            <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+              <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </div>
+
+          <ul class="navbar-list">
+            <li class="navbar-item"><a href="pulmonogy.html" class="navbar-link title-md">Pulmonology</a></li>
+            <li class="navbar-item"><a href="index.html" class="navbar-link title-md">Home</a></li>
+            <li class="navbar-item"><a href="medicine.html" class="navbar-link title-md">Medicine List</a></li>
+            <li class="navbar-item"><a href="vaccines.html" class="navbar-link title-md">Vaccines</a></li>
+          </ul>
+        </nav>
+
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline"></ion-icon>
+        </button>
+        <div class="overlay" data-nav-toggler data-overlay></div>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <section class="section hero" style="background-image: url('./assets/images/hero-bg.png')" aria-label="vaccine-scheduler">
+          <div class="container">
+            <div class="hero-content">
+              <p class="hero-subtitle has-before">Vaccination — Scheduler</p>
+              <h1 class="headline-lg hero-title">Plan your vaccination — quick & simple</h1>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="scheduler-wrap">
+              <div class="scheduler-left">
+                <h2>Schedule your vaccine</h2>
+                <p class="lead">This is a static scheduler page that helps users find recommended vaccines and prepare for vaccination. For booking, we link to the Vaccines list or Teleconsult page.</p>
+
+                <div class="card-info">
+                  <h3>How it works</h3>
+                  <ol>
+                    <li>Review vaccine recommendations below.</li>
+                    <li>Note the recommended dates and prepare documents.</li>
+                    <li>Click "Find nearest center" to view vaccine centers (external).</li>
+                    <li>Use the Teleconsult page for any pre-vaccination consultation.</li>
+                  </ol>
+                </div>
+
+                <div class="vaccine-list">
+                  <h3>Recommended Vaccines</h3>
+                  <ul>
+                    <li><strong>Influenza (Seasonal)</strong> — Annual for adults at-risk.</li>
+                    <li><strong>Tdap</strong> — Once, then boosters as recommended.</li>
+                    <li><strong>COVID-19</strong> — As per current local guidance.</li>
+                    <li><strong>MMR</strong> — Confirm immunization status.</li>
+                  </ul>
+                </div>
+
+                <div class="actions">
+                  <a class="btn" href="vaccines.html">View Vaccine Details</a>
+                  <a class="btn btn-appointment" href="teleconsultation.html">Request Pre-vaccination Teleconsult</a>
+                </div>
+              </div>
+
+              <aside class="scheduler-aside">
+                <div class="aside-card">
+                  <h4>Quick checklist</h4>
+                  <ul>
+                    <li>Bring photo ID</li>
+                    <li>Carry vaccination records (if any)</li>
+                    <li>Inform about allergies</li>
+                    <li>Wait 15 minutes after vaccination</li>
+                  </ul>
+                </div>
+
+                <div class="aside-card contact">
+                  <h4>Need Help?</h4>
+                  <p>Call: <a href="tel:+911234567890">+91 12345 67890</a></p>
+                  <p>Email: <a href="mailto:help@jeevandaan.example">help@jeevandaan.example</a></p>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
+      <div class="container">
+        <div class="footer-bottom">
+          <p class="text copyright">&copy; JEEVANDAAN 2024 | All Rights Reserved by Ctrl Z</p>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+      <ion-icon name="chevron-up"></ion-icon>
+    </a>
+
+    <!-- no JS for this static page (pure HTML + CSS) -->
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+/* Teleconsultation page styles — designed to match main theme variables */
+:root {
+  --accent: var(--verdigris);
+  --accent-dark: var(--midnight-green);
+  --muted: var(--independece);
+}
+
+/* Layout */
+.teleconsult-section {
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.95));
+  border-radius: var(--radius-12);
+  padding: 36px;
+  box-shadow: 0 10px 30px rgba(14, 51, 60, 0.06);
+  border: 1px solid var(--middle-blue-green_40);
+}
+
+.teleconsult-section h2 {
+  font-family: var(--ff-oswald);
+  color: var(--rich-black-fogra-29);
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+}
+
+.teleconsult-section p {
+  color: var(--independece);
+  margin-bottom: 20px;
+}
+
+/* Form */
+.teleconsult-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.teleconsult-form .full {
+  grid-column: 1 / -1;
+}
+
+.teleconsult-form input[type="text"],
+.teleconsult-form input[type="tel"],
+.teleconsult-form input[type="date"],
+.teleconsult-form input[type="time"],
+.teleconsult-form textarea {
+  padding: 14px 16px;
+  border-radius: var(--radius-6);
+  border: 1px solid var(--gainsboro);
+  font-size: 1.5rem;
+  color: var(--eerie-black);
+  background: linear-gradient(180deg, #fff, #fbfdff);
+  box-shadow: 0 4px 18px rgba(72, 128, 136, 0.03);
+}
+
+.teleconsult-form textarea { resize: vertical; min-height: 110px; }
+
+.teleconsult-form input:focus,
+.teleconsult-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(31, 142, 132, 0.08);
+}
+
+/* Button (appointment) */
+.btn-appointment {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  color: var(--white);
+  padding: 12px 18px;
+  border-radius: var(--radius-6);
+  font-weight: var(--fw-700);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+  border: none;
+  width: 100%;
+}
+
+.btn-appointment:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(33, 115, 104, 0.14);
+}
+
+/* Status boxes */
+.status-box {
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  border-radius: var(--radius-8);
+  padding: 18px;
+  box-shadow: var(--shadow-1);
+  margin-top: 18px;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+#confirmation code {
+  background: rgba(0,0,0,0.04);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+/* Live status */
+#liveStatus strong { display: block; font-size: 1.6rem; margin-bottom: 6px; color: var(--midnight-green); }
+
+/* Hero tweaks */
+.hero { --section-padding: 160px; }
+.hero-title { color: var(--white); }
+.hero-subtitle { color: rgba(255,255,255,0.9); }
+
+/* Small decorative card on the right for wide screens */
+.teleconsult-aside {
+  display: none;
+}
+
+@media (min-width: 980px) {
+  .teleconsult-section { display: grid; grid-template-columns: 1fr 360px; gap: 28px; align-items: start; }
+  .teleconsult-aside { display: block; }
+}
+
+.teleconsult-aside .card {
+  background: linear-gradient(180deg, var(--alice-blue), #fff);
+  padding: 18px;
+  border-radius: var(--radius-12);
+  box-shadow: var(--shadow-2);
+  text-align: left;
+}
+.teleconsult-aside .card h4 { margin-bottom: 8px; color: var(--midnight-green); }
+.teleconsult-aside .chip { display:inline-block; background: var(--white); padding:8px 12px; border-radius:999px; color:var(--midnight-green); margin-right:6px; font-weight:600; box-shadow:0 6px 18px rgba(17,122,112,0.05);} 
+
+/* Improve form labels accessibility (visually hidden) */
+.visually-hidden { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px,1px,1px,1px); white-space: nowrap; }
+
+/* Responsive */
+@media (max-width: 980px) {
+  .teleconsult-form { grid-template-columns: 1fr; }
+}
